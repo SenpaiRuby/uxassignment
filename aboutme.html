@@ -1,11 +1,210 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learn about Sakuran Japanese Cultural Club at NYP - our divisions and activities">
+  <title>About Us | Sakuran Japanese Cultural Club</title>
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 </head>
 <body>
-    
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg sjcc-navbar sticky-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="images/logo.png" alt="SJCC Logo" width="40" height="40" class="me-2">
+        <span class="fw-bold">SJCC</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+          <li class="nav-item"><a class="nav-link" href="join.html">Join Us</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="sjcc-hero text-white text-center py-5">
+    <div class="container">
+      <h1 id="typewriter-text" class="display-3 fw-bold mb-4"></h1>
+      <p class="lead">Discover the beauty of Japanese culture with us</p>
+    </div>
+  </header>
+
+  <!-- About Club Section -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10 text-center">
+          <h2 class="fw-bold mb-4">About Sakuran Japanese Cultural Club</h2>
+          <p class="lead">Sakuran Japanese Cultural Club (SJCC)'s name is a combination of two iconic flowers in Japan and Singapore - "Sakura" means cherry blossom and "Ran" means orchid.</p>
+          <p>The club's five divisions are Origami, Manga Anime Illustration Drawings (MAID), Japanese Music & Dance (JMD), Cosplay Anonymous, and Film Addicts. SJCC aims to share our love and appreciation of Japanese culture with everyone in NYP!</p>
+          <p>Our members cultivate an interest in Japanese culture and language and build self-confidence to improve their communication skills with the Japanese community. Some examples include participating in events organised by the Japanese Association of Singapore, and hosting exchange programmes with local and international Japanese high schools and universities.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Divisions Section -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center fw-bold mb-5">Our Divisions</h2>
+      <div class="row g-4">
+        <!-- Origami -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card division-card h-100" data-division="origami">
+            <img src="images/origami.jpg" class="card-img-top" alt="Origami Division">
+            <div class="card-body">
+              <h5 class="card-title">Origami</h5>
+              <p class="card-text">From sakura to orchids, learn to make anything you could possibly dream of with just paper!</p>
+              <button class="sjcc-btn-outline">Learn More</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- MAID -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card division-card h-100" data-division="maid">
+            <img src="images/maid.jpg" class="card-img-top" alt="MAID Division">
+            <div class="card-body">
+              <h5 class="card-title">Manga Anime Illustration Drawings (MAID)</h5>
+              <p class="card-text">Ever wanted to try drawing but not knowing where to start?</p>
+              <button class="sjcc-btn-outline">Learn More</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- JMD -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card division-card h-100" data-division="jmd">
+            <img src="images/jmd.jpg" class="card-img-top" alt="JMD Division">
+            <div class="card-body">
+              <h5 class="card-title">Japanese Music & Dance (JMD)</h5>
+              <p class="card-text">Want to be your own Jpop Idol?</p>
+              <button class="sjcc-btn-outline">Learn More</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Cosplay Anonymous -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card division-card h-100" data-division="cosplay">
+            <img src="images/cosplay.jpg" class="card-img-top" alt="Cosplay Division">
+            <div class="card-body">
+              <h5 class="card-title">Cosplay Anonymous</h5>
+              <p class="card-text">Have you ever wondered what it would be like to be someone else for a day?</p>
+              <button class="sjcc-btn-outline">Learn More</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Film Addicts -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card division-card h-100" data-division="film">
+            <img src="images/film.jpg" class="card-img-top" alt="Film Division">
+            <div class="card-body">
+              <h5 class="card-title">Film Addicts</h5>
+              <p class="card-text">Interested in film? Wish to take up photography?</p>
+              <button class="sjcc-btn-outline">Learn More</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- BJCL -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card division-card h-100" data-division="bjcl">
+            <img src="images/bjcl.jpg" class="card-img-top" alt="BJCL">
+            <div class="card-body">
+              <h5 class="card-title">Basic Japanese Conversation Lessons (BJCL)</h5>
+              <p class="card-text">Learn to speak and converse in basic Japanese!</p>
+              <button class="sjcc-btn-outline">Learn More</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BJCL Section -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 mb-4 mb-lg-0">
+          <img src="images/bjcl-class.jpg" alt="BJCL Class" class="img-fluid rounded shadow">
+        </div>
+        <div class="col-lg-6">
+          <h2 class="fw-bold mb-4">What is BJCL?</h2>
+          <p>BJCLs are monthly lessons that teach you how to speak and converse in basic Japanese. You'll get to learn some basic phrases that you can use in daily conversations.</p>
+          <p>Each month covers a different topic that surrounds the overarching theme of Japanese culture and society.</p>
+          <p>Furthermore, BJCL lets you meet and have fun with new friends!</p>
+          <a href="join.html" class="sjcc-btn mt-3">Join BJCL Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="sjcc-footer py-4 text-white">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 mb-4 mb-md-0">
+          <h5>Sakuran Japanese Cultural Club</h5>
+          <p>Nanyang Polytechnic<br>180 Ang Mo Kio Ave 8, Singapore 569830</p>
+        </div>
+        <div class="col-md-4 mb-4 mb-md-0">
+          <h5>Connect With Us</h5>
+          <div class="social-links">
+            <a href="#" class="text-white me-2"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="text-white me-2"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="text-white me-2"><i class="bi bi-telegram"></i></a>
+            <a href="#" class="text-white"><i class="bi bi-envelope"></i></a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <h5>Meeting Times</h5>
+          <p>Every Wednesday<br>3:00pm - 6:00pm<br>CCA Room 5-12</p>
+        </div>
+      </div>
+      <hr class="my-4">
+      <div class="text-center">
+        <p class="mb-0">&copy; 2025 Sakuran Japanese Cultural Club. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Custom JS -->
+  <script src="typewriter.js"></script>
+  <script src="divisions.js"></script>
+  
+  <!-- Fallback script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Fallback for typewriter
+      const typewriterEl = document.getElementById('typewriter-text');
+      if (typewriterEl && !typewriterEl.innerHTML) {
+        typewriterEl.innerHTML = "Our Divisions & Activities";
+      }
+    });
+  </script>
 </body>
 </html>

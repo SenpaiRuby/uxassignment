@@ -1,0 +1,211 @@
+/* ===== Color Variables ===== */
+:root {
+  --sjcc-pink: #ED8EDC;
+  --sjcc-purple: #9E4EE3;
+  --sjcc-lightpink: #F1C7EF;
+  --sjcc-lightpurple: #DAB2F8;
+  --sjcc-dark: #2E2A4A;
+  --sjcc-origami: #FF9AA2;
+  --sjcc-maid: #FFB7B2;
+  --sjcc-jmd: #FFDAC1;
+  --sjcc-cosplay: #E2F0CB;
+  --sjcc-film: #B5EAD7;
+  --sjcc-bjcl: #C7CEEA;
+}
+
+/* ===== Global Styles ===== */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Navigation */
+.sjcc-navbar {
+  background: linear-gradient(135deg, var(--sjcc-purple), var(--sjcc-pink));
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.sjcc-navbar .navbar-brand {
+  color: white;
+  font-size: 1.5rem;
+}
+
+.sjcc-navbar .nav-link {
+  color: rgba(255,255,255,0.85);
+  margin: 0 0.5rem;
+  font-weight: 500;
+}
+
+.sjcc-navbar .nav-link:hover,
+.sjcc-navbar .nav-link.active {
+  color: white;
+}
+
+/* Hero Section */
+.sjcc-hero {
+  background: linear-gradient(rgba(46, 42, 74, 0.8), rgba(46, 42, 74, 0.8)), 
+              url('../images/hero-bg.jpg') center/cover;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+.sjcc-hero h1 {
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+/* Cards */
+.division-card {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  border-top: 5px solid;
+}
+
+.division-card[data-division="origami"] {
+  border-top-color: var(--sjcc-origami);
+}
+.division-card[data-division="maid"] {
+  border-top-color: var(--sjcc-maid);
+}
+.division-card[data-division="jmd"] {
+  border-top-color: var(--sjcc-jmd);
+}
+.division-card[data-division="cosplay"] {
+  border-top-color: var(--sjcc-cosplay);
+}
+.division-card[data-division="film"] {
+  border-top-color: var(--sjcc-film);
+}
+.division-card[data-division="bjcl"] {
+  border-top-color: var(--sjcc-bjcl);
+}
+
+.division-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 15px 30px rgba(158, 78, 227, 0.2);
+}
+
+.division-card img {
+  height: 180px;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.division-card:hover img {
+  transform: scale(1.05);
+}
+
+/* Buttons */
+.sjcc-btn {
+  background: var(--sjcc-purple);
+  color: white;
+  border: none;
+  padding: 0.5rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+.sjcc-btn:hover {
+  background: var(--sjcc-pink);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(158, 78, 227, 0.3);
+  color: white;
+}
+
+.sjcc-btn-outline {
+  background: transparent;
+  color: var(--sjcc-purple);
+  border: 2px solid var(--sjcc-purple);
+  padding: 0.3rem 1rem;
+  border-radius: 50px;
+  font-weight: 500;
+  transition: all 0.3s;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+}
+
+.sjcc-btn-outline:hover {
+  background: var(--sjcc-purple);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Footer */
+.sjcc-footer {
+  background-color: var(--sjcc-dark);
+}
+
+.sjcc-footer a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.sjcc-footer a:hover {
+  color: var(--sjcc-lightpink);
+}
+
+.social-links a {
+  font-size: 1.5rem;
+  margin-right: 1rem;
+  transition: transform 0.3s;
+}
+
+.social-links a:hover {
+  transform: translateY(-3px);
+}
+
+/* Utility Classes */
+.rounded-lg {
+  border-radius: 15px;
+}
+
+.shadow-lg {
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* Division-specific backgrounds for modals */
+.modal-origami .modal-header {
+  background-color: var(--sjcc-origami);
+}
+.modal-maid .modal-header {
+  background-color: var(--sjcc-maid);
+}
+.modal-jmd .modal-header {
+  background-color: var(--sjcc-jmd);
+}
+.modal-cosplay .modal-header {
+  background-color: var(--sjcc-cosplay);
+}
+.modal-film .modal-header {
+  background-color: var(--sjcc-film);
+}
+.modal-bjcl .modal-header {
+  background-color: var(--sjcc-bjcl);
+}
+
+/* ===== Mobile Responsiveness ===== */
+@media (max-width: 768px) {
+  .sjcc-hero {
+    min-height: 50vh;
+  }
+  
+  .sjcc-hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .division-card {
+    margin-bottom: 1.5rem;
+  }
+  
+  .division-card .card-title {
+    font-size: 1.1rem;
+  }
+}
