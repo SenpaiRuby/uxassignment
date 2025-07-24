@@ -35,11 +35,13 @@ body {
   color: rgba(255,255,255,0.85);
   margin: 0 0.5rem;
   font-weight: 500;
+  transition: all 0.3s;
 }
 
 .sjcc-navbar .nav-link:hover,
 .sjcc-navbar .nav-link.active {
   color: white;
+  transform: translateY(-2px);
 }
 
 /* Hero Section */
@@ -51,10 +53,103 @@ body {
   align-items: center;
   text-align: center;
   color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
 }
 
 .sjcc-hero h1 {
   text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  margin-bottom: 1rem;
+}
+
+/* Enhanced Text Transition */
+.text-block {
+  display: inline-block;
+  position: relative;
+}
+
+.text-block::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--sjcc-pink);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.5s ease-in-out;
+}
+
+.sjcc-hero.active .text-block::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.transition-subtitle {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease 0.3s;
+}
+
+.sjcc-hero.active .transition-subtitle {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Sakura Petal Animation */
+.sakura-petal {
+  position: absolute;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ffffff"><path d="M12 2C13.1 2 14 2.9 14 4S13.1 6 12 6 10 5.1 10 4 10.9 2 12 2m3.5 5.1c-.7-.1-1.4.1-2 .4-1.2-1.1-2.9-1.3-4.3-.7-1.4.6-2.3 2-2.3 3.5 0 .5.1 1 .3 1.5-1.1.3-2 1-2.6 2-.6 1-.7 2.1-.4 3.2.3 1.1 1 2 2 2.6 1 .6 2.1.7 3.2.4 1.1-.3 2-1 2.6-2 .1-.2.2-.4.2-.6v.1c0 1.1.6 2.1 1.5 2.6.9.5 2 .6 3 .2 1.1-.4 1.9-1.3 2.2-2.4.3-1.1 0-2.2-.6-3.1.5-.4.9-1.1 1.1-2 .3-.9-.1-1.8-.6-2.4-1.3-.1-.1-.2-.2-.3-.3.1-.3.2-.6.2-1 0-1.1-.6-2.1-1.5-2.6z"/></svg>');
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.7;
+  width: 30px;
+  height: 30px;
+  animation: float 8s infinite linear;
+  z-index: 1;
+}
+
+.petal-1 {
+  top: 10%;
+  left: 10%;
+  animation-delay: 0s;
+  transform: rotate(20deg);
+}
+
+.petal-2 {
+  top: 30%;
+  right: 15%;
+  animation-delay: 2s;
+  transform: rotate(-15deg);
+  width: 25px;
+  height: 25px;
+}
+
+.petal-3 {
+  bottom: 20%;
+  left: 20%;
+  animation-delay: 4s;
+  transform: rotate(10deg);
+  width: 20px;
+  height: 20px;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(180deg);
+  }
+  100% {
+    transform: translateY(0) rotate(360deg);
+  }
 }
 
 /* Cards */
@@ -92,13 +187,17 @@ body {
 }
 
 .division-card img {
-  height: 180px;
+  height: 200px;
   object-fit: cover;
   transition: transform 0.3s;
 }
 
 .division-card:hover img {
   transform: scale(1.05);
+}
+
+.division-card .card-body {
+  padding: 1.5rem;
 }
 
 /* Buttons */
@@ -110,6 +209,7 @@ body {
   border-radius: 50px;
   font-weight: 500;
   transition: all 0.3s;
+  display: inline-block;
 }
 
 .sjcc-btn:hover {
@@ -127,8 +227,7 @@ body {
   border-radius: 50px;
   font-weight: 500;
   transition: all 0.3s;
-  font-size: 0.9rem;
-  margin-top: 1rem;
+  display: inline-block;
 }
 
 .sjcc-btn-outline:hover {
@@ -140,6 +239,7 @@ body {
 /* Footer */
 .sjcc-footer {
   background-color: var(--sjcc-dark);
+  padding: 2rem 0;
 }
 
 .sjcc-footer a {
@@ -162,39 +262,32 @@ body {
   transform: translateY(-3px);
 }
 
-/* Utility Classes */
-.rounded-lg {
-  border-radius: 15px;
+/* Section Styling */
+section {
+  padding: 4rem 0;
 }
 
-.shadow-lg {
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+.bg-light {
+  background-color: #f8f9fa !important;
 }
 
-/* Division-specific backgrounds for modals */
-.modal-origami .modal-header {
-  background-color: var(--sjcc-origami);
-}
-.modal-maid .modal-header {
-  background-color: var(--sjcc-maid);
-}
-.modal-jmd .modal-header {
-  background-color: var(--sjcc-jmd);
-}
-.modal-cosplay .modal-header {
-  background-color: var(--sjcc-cosplay);
-}
-.modal-film .modal-header {
-  background-color: var(--sjcc-film);
-}
-.modal-bjcl .modal-header {
-  background-color: var(--sjcc-bjcl);
+/* Text Styling */
+.lead {
+  font-size: 1.25rem;
+  font-weight: 300;
 }
 
-/* ===== Mobile Responsiveness ===== */
+/* Modal Styles */
+.modal-header {
+  background: linear-gradient(135deg, var(--sjcc-purple), var(--sjcc-pink));
+  color: white;
+}
+
+/* Responsive Adjustments */
 @media (max-width: 768px) {
   .sjcc-hero {
     min-height: 50vh;
+    padding: 3rem 0;
   }
   
   .sjcc-hero h1 {
@@ -205,7 +298,40 @@ body {
     margin-bottom: 1.5rem;
   }
   
-  .division-card .card-title {
-    font-size: 1.1rem;
+  section {
+    padding: 2rem 0;
+  }
+  
+  .sakura-petal {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* Text Animation Variants */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes zoomIn {
+  from { 
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to { 
+    opacity: 1;
+    transform: scale(1);
   }
 }
