@@ -8,78 +8,76 @@ document.addEventListener('DOMContentLoaded', function() {
       const description = this.querySelector('.card-text').textContent;
       const imageSrc = this.querySelector('img').src;
       
-      // Division-specific content
       let divisionName, fullDescription, activities;
       
       switch(division) {
         case 'origami':
           divisionName = "Origami Division";
-          fullDescription = "From sakura to orchids, learn to make anything with paper! Beginners welcome with our step-by-step tutorials. Progress from simple to complex origami creations.";
+          fullDescription = "Learn the traditional Japanese art of paper folding. From simple cranes to complex modular designs, our workshops cater to all skill levels.";
           activities = [
-            "Weekly origami workshops",
-            "Seasonal theme folding",
-            "Collaborative large-scale projects",
+            "Weekly folding sessions",
+            "Seasonal projects (cherry blossoms, stars)",
+            "Collaborative installations",
             "Exhibition opportunities"
           ];
           break;
           
         case 'maid':
-          divisionName = "Manga/Anime Illustration (MAID)";
-          fullDescription = "Learn drawing techniques from human anatomy to background art. Our workshops cover both traditional and digital illustration methods for manga and anime styles.";
+          divisionName = "Manga/Anime Illustration";
+          fullDescription = "Develop your unique art style through guided lessons on character design, panel composition, and digital illustration techniques.";
           activities = [
-            "Character design fundamentals",
-            "Manga paneling and storytelling",
-            "Digital art software tutorials",
+            "Character design workshops",
+            "Digital art software training",
+            "Manga storytelling techniques",
             "Art showcase events"
           ];
           break;
           
         case 'jmd':
-          divisionName = "Japanese Music & Dance (JMD)";
-          fullDescription = "Learn various dance styles from J-pop to traditional Japanese forms. No experience needed - just enthusiasm! Performance opportunities available.";
+          divisionName = "Japanese Music & Dance";
+          fullDescription = "Learn both contemporary J-pop dances and traditional Japanese performing arts in a fun, supportive environment.";
           activities = [
-            "Weekly dance practice",
-            "Vocal training workshops",
+            "Weekly dance practices",
+            "Vocal training sessions",
             "Performance opportunities",
-            "Collaborations with other CCAs"
+            "Cultural exchange events"
           ];
           break;
           
         case 'cosplay':
-          divisionName = "Cosplay Anonymous";
-          fullDescription = "Transform into your favorite characters with our costume and makeup guides. We cover everything from simple costumes to advanced prop-making techniques.";
+          divisionName = "Cosplay";
+          fullDescription = "From crafting costumes to character portrayal, we cover all aspects of bringing your favorite characters to life.";
           activities = [
             "Costume crafting workshops",
-            "Character portrayal techniques",
+            "Makeup and wig styling",
             "Photoshoot events",
-            "Convention group outings"
+            "Convention participation"
           ];
           break;
           
         case 'film':
-          divisionName = "Film Addicts";
-          fullDescription = "Learn photography and filmmaking to tell Japanese-inspired stories. Covers camera fundamentals, composition, and storytelling techniques.";
+          divisionName = "Film";
+          fullDescription = "Explore Japanese cinema and develop your filmmaking skills through practical workshops and projects.";
           activities = [
-            "Camera fundamentals",
+            "Film analysis sessions",
+            "Camera technique workshops",
             "Short film projects",
-            "Japanese cinema studies",
-            "Photo walks"
+            "Screening events"
           ];
           break;
           
         case 'bjcl':
-          divisionName = "Basic Japanese (BJCL)";
-          fullDescription = "Monthly conversational Japanese lessons with cultural context. Perfect for beginners wanting to learn practical phrases for daily conversations.";
+          divisionName = "Basic Japanese Lessons";
+          fullDescription = "Our conversational Japanese program focuses on practical language skills with cultural context.";
           activities = [
             "Monthly themed lessons",
-            "Conversation practice",
-            "Cultural context explanations",
-            "Language games"
+            "Interactive language games",
+            "Cultural immersion activities",
+            "Conversation practice"
           ];
           break;
       }
       
-      // Create modal
       const modal = document.createElement('div');
       modal.className = 'modal fade';
       modal.id = 'divisionModal';
@@ -89,9 +87,9 @@ document.addEventListener('DOMContentLoaded', function() {
       modal.innerHTML = `
         <div class="modal-dialog modal-dialog-centered modal-lg">
           <div class="modal-content">
-            <div class="modal-header">
+            <div class="modal-header" style="background: linear-gradient(135deg, var(--sjcc-purple), var(--sjcc-pink)); color: white;">
               <h5 class="modal-title">${divisionName}</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
               <div class="row">
@@ -100,7 +98,7 @@ document.addEventListener('DOMContentLoaded', function() {
                   <p>${fullDescription}</p>
                 </div>
                 <div class="col-md-6">
-                  <h6>Activities:</h6>
+                  <h6>Key Activities:</h6>
                   <ul class="mb-3">
                     ${activities.map(a => `<li>${a}</li>`).join('')}
                   </ul>
@@ -114,11 +112,9 @@ document.addEventListener('DOMContentLoaded', function() {
       
       document.body.appendChild(modal);
       
-      // Show modal
       const modalInstance = new bootstrap.Modal(modal);
       modalInstance.show();
       
-      // Clean up after modal closes
       modal.addEventListener('hidden.bs.modal', function() {
         document.body.removeChild(modal);
       });

@@ -18,14 +18,13 @@ document.addEventListener('DOMContentLoaded', function() {
   function animateTextOut() {
     heroSection.classList.remove('active');
     textBlock.style.animation = 'none';
-    void textBlock.offsetWidth; // Trigger reflow
+    void textBlock.offsetWidth;
   }
   
   function updateText() {
     textBlock.textContent = phrases[currentIndex].text;
     textBlock.lang = phrases[currentIndex].lang;
     
-    // Random animation style
     const animations = ['fadeIn', 'slideUp', 'zoomIn'];
     const randomAnim = animations[Math.floor(Math.random() * animations.length)];
     textBlock.style.animation = `${randomAnim} 0.8s ease forwards`;
@@ -39,9 +38,9 @@ document.addEventListener('DOMContentLoaded', function() {
     setTimeout(() => {
       currentIndex = (currentIndex + 1) % phrases.length;
       updateText();
-    }, 800); // Match with CSS transition
+    }, 800);
     
-    setTimeout(transitionText, 4000); // Total cycle time
+    setTimeout(transitionText, 4000);
   }
   
   // Initial setup
@@ -49,6 +48,5 @@ document.addEventListener('DOMContentLoaded', function() {
   textBlock.lang = phrases[0].lang;
   heroSection.classList.add('active');
   
-  // Start transition after initial load
   setTimeout(transitionText, 3000);
 });
