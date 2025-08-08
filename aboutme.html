@@ -67,7 +67,9 @@
         <!-- Origami -->
         <div class="col-md-6 col-lg-4">
           <div class="card division-card h-100" data-division="origami">
-            <img src="origami.png" class="card-img-top division-img" alt="Origami Division">
+            <div class="division-img-container">
+              <img src="origami.png" class="card-img-top division-img" alt="Origami Division">
+            </div>
             <div class="card-body">
               <h5 class="card-title">Origami</h5>
               <p class="card-text">Create beautiful paper art from simple to complex designs.</p>
@@ -79,7 +81,9 @@
         <!-- MAID -->
         <div class="col-md-6 col-lg-4">
           <div class="card division-card h-100" data-division="maid">
-            <img src="maid2.png" class="card-img-top division-img" alt="MAID Division">
+            <div class="division-img-container">
+              <img src="maid2.png" class="card-img-top division-img" alt="MAID Division">
+            </div>
             <div class="card-body">
               <h5 class="card-title">Manga/Anime Illustration</h5>
               <p class="card-text">Develop your drawing skills in manga and anime styles.</p>
@@ -91,7 +95,9 @@
         <!-- JMD -->
         <div class="col-md-6 col-lg-4">
           <div class="card division-card h-100" data-division="jmd">
-            <img src="jm3.png" class="card-img-top division-img" alt="JMD Division">
+            <div class="division-img-container">
+              <img src="jm3.png" class="card-img-top division-img" alt="JMD Division">
+            </div>
             <div class="card-body">
               <h5 class="card-title">Japanese Music & Dance</h5>
               <p class="card-text">Learn J-pop dances and traditional Japanese performances.</p>
@@ -103,7 +109,9 @@
         <!-- Cosplay -->
         <div class="col-md-6 col-lg-4">
           <div class="card division-card h-100" data-division="cosplay">
-            <img src="cosplay2.png" class="card-img-top division-img" alt="Cosplay Division">
+            <div class="division-img-container">
+              <img src="cosplay2.png" class="card-img-top division-img" alt="Cosplay Division">
+            </div>
             <div class="card-body">
               <h5 class="card-title">Cosplay</h5>
               <p class="card-text">Bring characters to life through costumes and performance.</p>
@@ -115,7 +123,9 @@
         <!-- Film -->
         <div class="col-md-6 col-lg-4">
           <div class="card division-card h-100" data-division="film">
-            <img src="film.jpg" class="card-img-top division-img" alt="Film Division">
+            <div class="division-img-container">
+              <img src="film.jpg" class="card-img-top division-img" alt="Film Division">
+            </div>
             <div class="card-body">
               <h5 class="card-title">Film</h5>
               <p class="card-text">Explore Japanese cinema and create your own films.</p>
@@ -127,7 +137,9 @@
         <!-- BJCL -->
         <div class="col-md-6 col-lg-4">
           <div class="card division-card h-100" data-division="bjcl">
-            <img src="bjcl.png" class="card-img-top division-img" alt="BJCL">
+            <div class="division-img-container">
+              <img src="bjcl.png" class="card-img-top division-img" alt="BJCL">
+            </div>
             <div class="card-body">
               <h5 class="card-title">Basic Japanese Lessons</h5>
               <p class="card-text">Learn conversational Japanese and cultural context.</p>
@@ -135,6 +147,38 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Executive Committee Section -->
+  <section class="py-5" id="exco">
+    <div class="container">
+      <h2 class="text-center fw-bold mb-5">Meet Our Team</h2>
+      
+      <!-- Search and Filter -->
+      <div class="row mb-4">
+        <div class="col-md-6 mb-3 mb-md-0">
+          <div class="input-group">
+            <span class="input-group-text"><i class="bi bi-search"></i></span>
+            <input type="text" class="form-control" id="memberSearch" placeholder="Search members...">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <select class="form-select" id="roleFilter">
+            <option value="">All Roles</option>
+            <option value="President">President</option>
+            <option value="Vice President">Vice President</option>
+            <option value="Division Head">Division Heads</option>
+            <option value="Logistics">Logistics</option>
+            <option value="Other">Other Roles</option>
+          </select>
+        </div>
+      </div>
+      
+      <!-- Members Grid -->
+      <div class="row g-4" id="membersContainer">
+        <!-- Members will be loaded by JavaScript -->
       </div>
     </div>
   </section>
@@ -168,8 +212,65 @@
     </div>
   </footer>
 
+  <!-- Division Modal -->
+  <div class="modal fade" id="divisionModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header" style="background: linear-gradient(135deg, var(--sjcc-purple), var(--sjcc-pink)); color: white;">
+          <h5 class="modal-title">Division Title</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-6 mb-3 mb-md-0">
+              <img id="divisionModalImage" src="" class="img-fluid rounded mb-3" alt="Division Image">
+              <p id="divisionModalDescription"></p>
+            </div>
+            <div class="col-md-6">
+              <h6>Key Activities:</h6>
+              <ul id="divisionModalActivities" class="mb-3"></ul>
+              <a href="join.html" class="sjcc-btn">Join This Division</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Member Modal -->
+  <div class="modal fade" id="memberModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header bg-purple text-white">
+          <h5 class="modal-title" id="memberModalTitle">Member Name</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="text-center mb-4">
+            <img id="memberModalImage" src="" class="img-fluid rounded-circle member-modal-img" alt="Member Photo">
+          </div>
+          <div class="member-info">
+            <p><strong>Role:</strong> <span id="memberModalRole"></span></p>
+            <p><strong>Division:</strong> <span id="memberModalDivision"></span></p>
+            <p><strong>About:</strong> <span id="memberModalAbout"></span></p>
+            <hr>
+            <div class="contact-info">
+              <p><strong>Contact:</strong></p>
+              <p><i class="bi bi-telephone me-2"></i> <a id="memberModalPhone" href=""></a></p>
+              <p><i class="bi bi-envelope me-2"></i> <a id="memberModalEmail" href=""></a></p>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="sjcc-btn-outline" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="text-transition.js"></script>
   <script src="divisions.js"></script>
+  <script src="members.js"></script>
 </body>
 </html>

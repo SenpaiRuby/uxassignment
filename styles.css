@@ -4,18 +4,6 @@
   --sjcc-lightpink: #F1C7EF;
   --sjcc-lightpurple: #DAB2F8;
   --sjcc-dark: #2E2A4A;
-  --sjcc-origami: #FF9AA2;
-  --sjcc-maid: #FFB7B2;
-  --sjcc-jmd: #FFDAC1;
-  --sjcc-cosplay: #E2F0CB;
-  --sjcc-film: #B5EAD7;
-  --sjcc-bjcl: #C7CEEA;
-}
-
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #333;
-  line-height: 1.6;
 }
 
 /* Navigation */
@@ -45,7 +33,7 @@ body {
 /* Hero Section */
 .sjcc-hero {
   background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
-              url('../images/jm3.png') center/cover;
+              url('hero-bg.jpg') center/cover;
   min-height: 60vh;
   display: flex;
   align-items: center;
@@ -138,124 +126,9 @@ body {
   100% { transform: translateY(0) rotate(360deg); }
 }
 
-/* Division Cards */
-.division-card {
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  border: none;
-  border-radius: 10px;
-  overflow: hidden;
-  cursor: pointer;
-  border-top: 5px solid;
-}
-
-.division-card[data-division="origami"] { border-top-color: var(--sjcc-origami); }
-.division-card[data-division="maid"] { border-top-color: var(--sjcc-maid); }
-.division-card[data-division="jmd"] { border-top-color: var(--sjcc-jmd); }
-.division-card[data-division="cosplay"] { border-top-color: var(--sjcc-cosplay); }
-.division-card[data-division="film"] { border-top-color: var(--sjcc-film); }
-.division-card[data-division="bjcl"] { border-top-color: var(--sjcc-bjcl); }
-
-.division-card:hover {
-  transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 15px 30px rgba(158, 78, 227, 0.2);
-}
-
-.division-img {
-  height: 200px;
-  object-fit: cover;
-  transition: transform 0.3s;
-  width: 100%;
-}
-
-.division-card:hover .division-img {
-  transform: scale(1.05);
-}
-
-/* Buttons */
-.sjcc-btn {
-  background: var(--sjcc-purple);
-  color: white;
-  border: none;
-  padding: 0.5rem 1.5rem;
-  border-radius: 50px;
-  font-weight: 500;
-  transition: all 0.3s;
-  display: inline-block;
-}
-
-.sjcc-btn:hover {
-  background: var(--sjcc-pink);
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(158, 78, 227, 0.3);
-  color: white;
-}
-
-.sjcc-btn-outline {
-  background: transparent;
-  color: var(--sjcc-purple);
-  border: 2px solid var(--sjcc-purple);
-  padding: 0.3rem 1rem;
-  border-radius: 50px;
-  font-weight: 500;
-  transition: all 0.3s;
-  display: inline-block;
-}
-
-.sjcc-btn-outline:hover {
-  background: var(--sjcc-purple);
-  color: white;
-  transform: translateY(-2px);
-}
-
-/* Footer */
-.sjcc-footer {
-  background-color: var(--sjcc-dark);
-  padding: 2rem 0;
-}
-
-.sjcc-footer a {
-  color: white;
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-.sjcc-footer a:hover {
-  color: var(--sjcc-lightpink);
-}
-
-.social-links a {
-  font-size: 1.5rem;
-  margin-right: 1rem;
-  transition: transform 0.3s;
-}
-
-.social-links a:hover {
-  transform: translateY(-3px);
-}
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-  .sjcc-hero {
-    min-height: 50vh;
-    padding: 3rem 0;
-  }
-  
-  .sjcc-hero h1 {
-    font-size: 2.5rem;
-  }
-  
-  .division-card {
-    margin-bottom: 1.5rem;
-  }
-  
-  .sakura-petal {
-    width: 20px;
-    height: 20px;
-  }
-}
-/* Events Page Specific Styles */
+/* Event Cards */
 .event-card {
-  transition: all 0.3s;
+  transition: all 0.3s ease;
   border: none;
   border-radius: 10px;
   overflow: hidden;
@@ -269,12 +142,19 @@ body {
 
 .event-card img {
   height: 200px;
+  width: 100%;
   object-fit: cover;
+  object-position: center;
   transition: transform 0.3s;
 }
 
 .event-card:hover img {
   transform: scale(1.05);
+}
+
+.portrait-image {
+  object-fit: contain;
+  background-color: #f8f9fa;
 }
 
 /* Gallery Styles */
@@ -332,6 +212,9 @@ body {
 .modal-body img {
   border-radius: 8px;
   margin-bottom: 1rem;
+  max-height: 300px;
+  width: 100%;
+  object-fit: contain;
 }
 
 .modal-body h6 {
@@ -339,17 +222,110 @@ body {
   margin-top: 1rem;
 }
 
+/* Buttons */
+.sjcc-btn {
+  background: var(--sjcc-purple);
+  color: white;
+  border: none;
+  padding: 0.5rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 500;
+  transition: all 0.3s;
+  display: inline-block;
+}
+
+.sjcc-btn:hover {
+  background: var(--sjcc-pink);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(158, 78, 227, 0.3);
+  color: white;
+}
+
+.sjcc-btn-outline {
+  background: transparent;
+  color: var(--sjcc-purple);
+  border: 2px solid var(--sjcc-purple);
+  padding: 0.3rem 1rem;
+  border-radius: 50px;
+  font-weight: 500;
+  transition: all 0.3s;
+  display: inline-block;
+}
+
+.sjcc-btn-outline:hover {
+  background: var(--sjcc-purple);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.bg-purple {
+  background-color: var(--sjcc-purple);
+}
+
+/* Footer */
+.sjcc-footer {
+  background-color: var(--sjcc-dark);
+  padding: 2rem 0;
+}
+
+.sjcc-footer a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.sjcc-footer a:hover {
+  color: var(--sjcc-lightpink);
+}
+
+.social-links a {
+  font-size: 1.5rem;
+  margin-right: 1rem;
+  transition: transform 0.3s;
+}
+
+.social-links a:hover {
+  transform: translateY(-3px);
+}
+
 /* Responsive Adjustments */
 @media (max-width: 768px) {
-  .gallery-item {
-    height: 150px;
+  .sjcc-hero {
+    min-height: 50vh;
+    padding: 3rem 0;
   }
   
-  .event-card img {
-    height: 150px;
+  .sjcc-hero h1 {
+    font-size: 2.5rem;
   }
   
+  .event-card, .gallery-item {
+    margin-bottom: 1.5rem;
+  }
+  
+  .sakura-petal {
+    width: 20px;
+    height: 20px;
+  }
+
   #event-calendar {
     font-size: 0.9rem;
   }
+}
+/* Add this to your existing styles.css */
+.division-img-container {
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+}
+
+.division-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.division-card:hover .division-img {
+  transform: scale(1.05);
 }
