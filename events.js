@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
       time: "6:30 PM - 8:45 PM",
       location: "T.201, Nanyang Polytechnic",
       image: "jmdws.png",
+      imagePosition: "top",
       description: "Our JMD division is hosting a special workshop to teach you all about Wotagei (concert dance moves) and traditional Japanese dances! This workshop is perfect for anyone interested in Japanese pop culture or traditional performing arts. No prior experience needed - our experienced instructors will guide you through every step.",
       details: `
         <h6 class="mt-3">Workshop Highlights:</h6>
@@ -94,6 +95,7 @@ document.addEventListener('DOMContentLoaded', function() {
       time: "All Day",
       location: "NYP Campus",
       image: "slc.png",
+      imagePosition: "top",
       description: "Student Life Carnival (SLC) will be serialized to bring SJCC to you! Looking back at all the amazing SJCC moments during SLC from the incredible cosplays to the breathtaking performances. Our booth will feature interactive Japanese cultural experiences, photo opportunities with our cosplayers, and special performances throughout the day.",
       details: `
         <h6 class="mt-3">Event Details:</h6>
@@ -204,7 +206,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const eventCard = `
         <div class="col-md-4">
           <div class="card event-card h-100">
-            <img src="${event.image}" class="card-img-top ${event.image === 'spartsfiesta.png' ? 'portrait-image' : ''}" alt="${event.title}">
+            <img src="${event.image}" class="card-img-top ${event.imagePosition === 'top' ? 'object-position-top' : ''} ${event.image === 'spartsfiesta.png' ? 'portrait-image' : ''}" alt="${event.title}" style="object-fit: cover; ${event.imagePosition === 'top' ? 'object-position: top;' : ''}">
             <div class="card-body">
               <h5 class="card-title">${event.title}</h5>
               <p class="text-muted"><i class="bi bi-calendar-event me-2"></i>${event.date}</p>
@@ -243,7 +245,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const galleryItem = `
         <div class="col-6 col-md-4 col-lg-3">
           <div class="gallery-item position-relative">
-            <img src="${event.image}" class="img-fluid rounded ${event.image === 'spartsfiesta.png' ? 'portrait-image' : ''}" alt="${event.title}">
+            <img src="${event.image}" class="img-fluid rounded ${event.image === 'spartsfiesta.png' ? 'portrait-image' : ''}" alt="${event.title}" style="object-fit: cover; ${event.image === 'slc.png' || event.image === 'jmdws.png' ? 'object-position: top;' : ''}">
             <div class="gallery-overlay">
               <h6>${event.title}</h6>
               <small>${event.date}</small>
