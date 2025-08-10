@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Join Us | Sakuran Japanese Cultural Club</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="logo.jpg" type="image/jpeg">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg sjcc-navbar sticky-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="logo.jpg" alt="SJCC Logo" width="40" height="40" class="me-2 rounded-circle">
+        <span class="fw-bold">SJCC</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+          <li class="nav-item"><a class="nav-link active" href="join.html">Join Us</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="sjcc-hero-join text-white text-center py-5">
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="display-4 fw-bold mb-4">Join Our Community</h1>
+        <p class="lead">Become part of Singapore's most vibrant Japanese culture club</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Membership Benefits -->
+  <section class="py-5">
+    <div class="container">
+      <h2 class="text-center fw-bold mb-5">Why Join SJCC?</h2>
+      <div class="row g-4">
+        <!-- Benefit 1 -->
+        <div class="col-md-4">
+          <div class="card h-100 border-0 shadow-sm benefit-card">
+            <div class="card-body text-center p-4">
+              <div class="benefit-icon mb-3">
+                <i class="bi bi-people-fill"></i>
+              </div>
+              <h5>Make Friends</h5>
+              <p>Connect with 500+ members who share your interests</p>
+            </div>
+          </div>
+        </div>
+        <!-- Benefit 2 -->
+        <div class="col-md-4">
+          <div class="card h-100 border-0 shadow-sm benefit-card">
+            <div class="card-body text-center p-4">
+              <div class="benefit-icon mb-3">
+                <i class="bi bi-star-fill"></i>
+              </div>
+              <h5>Develop Skills</h5>
+              <p>Learn from experts in manga, cosplay, language and more</p>
+            </div>
+          </div>
+        </div>
+        <!-- Benefit 3 -->
+        <div class="col-md-4">
+          <div class="card h-100 border-0 shadow-sm benefit-card">
+            <div class="card-body text-center p-4">
+              <div class="benefit-icon mb-3">
+                <i class="bi bi-calendar-event"></i>
+              </div>
+              <h5>Exclusive Events</h5>
+              <p>Access member-only workshops and cultural experiences</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Registration Form -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="card shadow-sm border-0">
+            <div class="card-body p-4 p-md-5">
+              <h2 class="text-center fw-bold mb-4">Membership Application</h2>
+              <form id="joinForm">
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label for="fullName" class="form-label">Full Name*</label>
+                    <input type="text" class="form-control" id="fullName" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="email" class="form-label">Email*</label>
+                    <input type="email" class="form-control" id="email" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="phone" class="form-label">Phone Number*</label>
+                    <input type="tel" class="form-control" id="phone" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="studentId" class="form-label">Student ID*</label>
+                    <input type="text" class="form-control" id="studentId" required>
+                  </div>
+                  <div class="col-12">
+                    <label for="division" class="form-label">Preferred Division(s)*</label>
+                    <select class="form-select" id="division" multiple required>
+                      <option value="origami">Origami</option>
+                      <option value="maid">Manga/Anime</option>
+                      <option value="jmd">Japanese Music & Dance</option>
+                      <option value="cosplay">Cosplay</option>
+                      <option value="film">Film</option>
+                      <option value="bjcl">Japanese Lessons</option>
+                    </select>
+                    <small class="text-muted">Hold Ctrl/Cmd to select multiple</small>
+                  </div>
+                  <div class="col-12">
+                    <label for="message" class="form-label">Why do you want to join SJCC?</label>
+                    <textarea class="form-control" id="message" rows="3"></textarea>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="agreeTerms" required>
+                      <label class="form-check-label" for="agreeTerms">
+                        I agree to the <a href="#" data-bs-toggle="modal" data-bs-target="#termsModal">Terms & Conditions</a>*
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-12 text-center mt-4">
+                    <button type="submit" class="sjcc-btn">Submit Application</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-5">
+    <div class="container">
+      <h2 class="text-center fw-bold mb-5">Frequently Asked Questions</h2>
+      <div class="accordion" id="faqAccordion">
+        <!-- FAQ Item 1 -->
+        <div class="accordion-item mb-3 border-0 shadow-sm">
+          <h3 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+              Who can join SJCC?
+            </button>
+          </h3>
+          <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Our club is open to all NYP students. Community members may join select events with prior approval.
+            </div>
+          </div>
+        </div>
+        <!-- FAQ Item 2 -->
+        <div class="accordion-item mb-3 border-0 shadow-sm">
+          <h3 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+              Is there a membership fee?
+            </button>
+          </h3>
+          <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Yes, we charge a S$20 annual fee to cover materials and event costs. This is non-refundable after 14 days.
+            </div>
+          </div>
+        </div>
+        <!-- FAQ Item 3 -->
+        <div class="accordion-item mb-3 border-0 shadow-sm">
+          <h3 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+              When will I hear back after applying?
+            </button>
+          </h3>
+          <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              We process applications within 5 working days. You'll receive an email with next steps.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Consistent Footer -->
+  <footer class="sjcc-footer py-4 text-white">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5 mb-4 mb-md-0">
+          <h5 class="mb-3">Sakuran Japanese Cultural Club</h5>
+          <p class="mb-1">Nanyang Polytechnic</p>
+          <p>180 Ang Mo Kio Ave 8, Singapore 569830</p>
+        </div>
+        
+        <div class="col-md-3 mb-4 mb-md-0">
+          <h5 class="mb-3">Connect With Us</h5>
+          <div class="social-icons">
+            <a href="#" class="text-white me-3"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="text-white me-3"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="text-white me-3"><i class="bi bi-telegram"></i></a>
+            <a href="#" class="text-white"><i class="bi bi-envelope"></i></a>
+          </div>
+        </div>
+        
+        <div class="col-md-4">
+          <h5 class="mb-3">Meeting Times</h5>
+          <p class="mb-1">Every Wednesday</p>
+          <p class="mb-1">3:00pm - 6:00pm</p>
+          <p>CCA Room 5-12</p>
+        </div>
+      </div>
+      <hr class="my-4">
+      <div class="text-center">
+        <p class="mb-0">&copy; 2025 Sakuran Japanese Cultural Club. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Terms & Conditions Modal -->
+  <div class="modal fade" id="termsModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header bg-purple text-white">
+          <h5 class="modal-title">Membership Terms & Conditions</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <!-- Terms content here -->
+          <h6 class="fw-bold">1. Eligibility</h6>
+          <ul class="mb-3">
+            <li>Open to all current NYP students with valid student ID</li>
+            <li>Non-students may attend public events as guests</li>
+          </ul>
+
+          <h6 class="fw-bold">2. Membership Duration</h6>
+          <ul class="mb-3">
+            <li>Valid for one academic year (August - July)</li>
+            <li>Automatic expiration upon graduation or withdrawal from NYP</li>
+          </ul>
+
+          <!-- Additional terms sections... -->
+
+          <div class="alert alert-light mt-4">
+            By joining SJCC, you agree to abide by NYP's Student Code of Conduct and all club policies.
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="sjcc-btn-outline" data-bs-dismiss="modal">I Understand</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="join.js"></script>
+</body>
+</html>

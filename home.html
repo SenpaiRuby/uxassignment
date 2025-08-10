@@ -7,14 +7,14 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
   <link rel="stylesheet" href="styles.css">
-  <link rel="icon" href="logo.jpg" type="image/jpeg">
+  <link rel="icon" href="assets/logo.jpg" type="image/jpeg">
 </head>
 <body>
-  <!-- Navigation Bar (Consistent Across All Pages) -->
+  <!-- Navigation Bar -->
   <nav class="navbar navbar-expand-lg sjcc-navbar sticky-top">
     <div class="container">
       <a class="navbar-brand d-flex align-items-center" href="index.html">
-        <img src="logo.jpg" alt="SJCC Logo" width="40" height="40" class="me-2 rounded-circle">
+        <img src="assets/logo.jpg" alt="SJCC Logo" width="40" height="40" class="me-2 rounded-circle">
         <span class="fw-bold">SJCC</span>
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -22,103 +22,174 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link active" href="home.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="aboutme.html">About</a> <!-- Link to About -->
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="events.html">Events</a> <!-- Link to Events -->
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="join.html">Join Us</a>
-          </li>
+          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+          <li class="nav-item"><a class="nav-link" href="join.html">Join Us</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- Hero Section with CTA Buttons -->
-  <header class="sjcc-hero text-white text-center py-5">
-    <div class="container">
-      <div class="hero-content">
-        <div class="sakura-petal petal-1"></div>
-        <div class="sakura-petal petal-2"></div>
-        <h1 class="display-3 fw-bold mb-4">Discover Japanese Culture</h1>
-        <p class="lead">Join our vibrant community at NYP</p>
-        <div class="mt-4">
-          <a href="about.html" class="sjcc-btn mx-2">Learn About Us</a> <!-- Primary link to About -->
-          <a href="events.html" class="sjcc-btn-outline mx-2">View Events</a> <!-- Secondary link to Events -->
-        </div>
+  <!-- Video Background Hero -->
+  <header class="video-hero">
+    <div class="video-background">
+      <video autoplay muted loop playsinline>
+        <source src="assets/sakura-video.mp4" type="video/mp4">
+        <!-- Fallback image if video doesn't load -->
+        <img src="assets/sakura-fallback.jpg" alt="Cherry Blossoms">
+      </video>
+      <div class="video-overlay"></div>
+    </div>
+    <div class="hero-content text-white text-center">
+      <h1 class="display-3 fw-bold mb-4">Discover Japanese Culture</h1>
+      <p class="lead mb-5">Experience the beauty of Japan through our vibrant community</p>
+      <div class="hero-buttons">
+        <a href="join.html" class="sjcc-btn mx-2">Join Now</a>
+        <a href="about.html" class="sjcc-btn-outline mx-2">Learn More</a>
       </div>
     </div>
   </header>
 
-  <!-- Divisions Preview (Links to About Page Sections) -->
-  <section class="py-5 bg-light">
-    <div class="container">
-      <h2 class="text-center fw-bold mb-5">Explore Our Divisions</h2>
-      <div class="row g-4 text-center">
-        <!-- Origami -->
-        <div class="col-6 col-md-4 col-lg-2">
-          <a href="about.html#origami" class="division-preview"> <!-- Deep link to Origami section -->
-            <div class="icon-circle mb-3">
-              <i class="bi bi-paperclip fs-3"></i>
-            </div>
-            <h6>Origami</h6>
-          </a>
-        </div>
-        <!-- Manga/Anime -->
-        <div class="col-6 col-md-4 col-lg-2">
-          <a href="about.html#maid" class="division-preview"> <!-- Deep link to Manga/Anime section -->
-            <div class="icon-circle mb-3">
-              <i class="bi bi-palette fs-3"></i>
-            </div>
-            <h6>Manga/Anime</h6>
-          </a>
-        </div>
-        <!-- Add other 4 divisions similarly -->
-      </div>
-      <div class="text-center mt-4">
-        <a href="about.html" class="sjcc-btn-outline">See All Divisions</a> <!-- Full About page link -->
-      </div>
-    </div>
-  </section>
-
-  <!-- Upcoming Events Teaser -->
+  <!-- Club Highlights -->
   <section class="py-5">
     <div class="container">
-      <h2 class="text-center fw-bold mb-5">Upcoming Highlights</h2>
-      <div class="row justify-content-center">
-        <div class="col-lg-8 text-center">
-          <p>Check out our exciting events this month!</p>
-          <a href="events.html" class="sjcc-btn">View Full Event Calendar</a> <!-- Prominent Events link -->
+      <div class="row align-items-center">
+        <div class="col-lg-6 mb-4 mb-lg-0">
+          <h2 class="fw-bold mb-4">Welcome to SJCC</h2>
+          <p class="lead">Singapore's premier Japanese cultural experience at NYP</p>
+          <p>Since 2010, we've brought authentic Japanese cultural activities to students through hands-on workshops, performances, and community events.</p>
+          <div class="mt-4">
+            <a href="about.html" class="sjcc-btn">Our Story</a>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="ratio ratio-16x9">
+            <iframe src="https://www.youtube.com/embed/EXAMPLE" allowfullscreen></iframe>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer with Navigation Links -->
+  <!-- Photo Gallery -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center fw-bold mb-5">#SJCCMoments</h2>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="assets/gallery1.jpg" alt="Cherry Blossom Festival" loading="lazy">
+          <div class="gallery-caption">Cherry Blossom Festival 2024</div>
+        </div>
+        <div class="gallery-item">
+          <img src="assets/gallery2.jpg" alt="Cosplay Workshop" loading="lazy">
+          <div class="gallery-caption">Cosplay Workshop</div>
+        </div>
+        <!-- Add 4-6 more gallery items -->
+      </div>
+      <div class="text-center mt-4">
+        <a href="gallery.html" class="sjcc-btn-outline">View Full Gallery</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="py-5">
+    <div class="container">
+      <h2 class="text-center fw-bold mb-5">What Members Say</h2>
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <div class="testimonial-card">
+            <div class="testimonial-rating">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+            </div>
+            <p class="testimonial-text">"SJCC helped me discover my passion for Japanese culture while making lifelong friends!"</p>
+            <div class="testimonial-author">
+              <img src="assets/member1.jpg" alt="Sarah Lim">
+              <div>
+                <h6>Sarah Lim</h6>
+                <small>Cosplay Division</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Add 2 more testimonials -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Links -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <div class="row g-4 text-center">
+        <div class="col-md-4">
+          <div class="quick-link-card">
+            <i class="bi bi-calendar-event"></i>
+            <h5>Events Calendar</h5>
+            <p>See what's happening this month</p>
+            <a href="events.html" class="sjcc-btn-outline">View Events</a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="quick-link-card">
+            <i class="bi bi-people-fill"></i>
+            <h5>Our Divisions</h5>
+            <p>Explore our 6 cultural divisions</p>
+            <a href="about.html#divisions" class="sjcc-btn-outline">Learn More</a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="quick-link-card">
+            <i class="bi bi-chat-square-text"></i>
+            <h5>Contact Us</h5>
+            <p>Have questions? Get in touch</p>
+            <a href="contact.html" class="sjcc-btn-outline">Reach Out</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Standardized Footer -->
   <footer class="sjcc-footer py-4 text-white">
     <div class="container">
       <div class="row">
-        <div class="col-md-4 mb-4 mb-md-0">
-          <h5>Quick Links</h5>
-          <ul class="list-unstyled">
-            <li><a href="home.html" class="text-white">Home</a></li>
-            <li><a href="aboutme.html" class="text-white">About</a></li> <!-- Footer link -->
-            <li><a href="events.html" class="text-white">Events</a></li> <!-- Footer link -->
-            <li><a href="join.html" class="text-white">Join Us</a></li>
-          </ul>
+        <div class="col-md-5 mb-4 mb-md-0">
+          <h5 class="mb-3">Sakuran Japanese Cultural Club</h5>
+          <p class="mb-1">Nanyang Polytechnic</p>
+          <p>180 Ang Mo Kio Ave 8, Singapore 569830</p>
         </div>
-        <!-- Add other footer columns -->
+        
+        <div class="col-md-3 mb-4 mb-md-0">
+          <h5 class="mb-3">Connect With Us</h5>
+          <div class="social-icons">
+            <a href="#" class="text-white me-3"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="text-white me-3"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="text-white me-3"><i class="bi bi-telegram"></i></a>
+            <a href="#" class="text-white"><i class="bi bi-envelope"></i></a>
+          </div>
+        </div>
+        
+        <div class="col-md-4">
+          <h5 class="mb-3">Meeting Times</h5>
+          <p class="mb-1">Every Wednesday</p>
+          <p class="mb-1">3:00pm - 6:00pm</p>
+          <p>CCA Room 5-12</p>
+        </div>
+      </div>
+      <hr class="my-4">
+      <div class="text-center">
+        <p class="mb-0">&copy; 2025 Sakuran Japanese Cultural Club. All rights reserved.</p>
       </div>
     </div>
   </footer>
 
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="home.js"></script>
+  <script src="js/home.js"></script>
 </body>
 </html>
