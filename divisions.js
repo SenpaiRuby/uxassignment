@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', function() {
                   <ul class="mb-3">
                     ${activities.map(a => `<li>${a}</li>`).join('')}
                   </ul>
-                  <a href="join.html" class="sjcc-btn">Join This Division</a>
+                  <a href="joinus.html" class="sjcc-btn">Join This Division</a>
                 </div>
               </div>
             </div>
