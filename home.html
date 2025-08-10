@@ -25,64 +25,66 @@
           <li class="nav-item"><a class="nav-link active" href="home.html">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="aboutme.html">About</a></li>
           <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
-          <li class="nav-item"><a class="nav-link" href="join.html">Join Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="joinus.html">Join Us</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- Hero Section with Sakura Petals -->
-  <header class="sjcc-hero text-white text-center py-5">
+  <!-- Hero Section -->
+  <header class="sjcc-hero home-hero text-white text-center py-5">
     <div class="container">
       <div class="hero-content">
         <div class="sakura-petal petal-1"></div>
         <div class="sakura-petal petal-2"></div>
         <div class="sakura-petal petal-3"></div>
-        <h1 id="hero-text" class="display-3 fw-bold mb-4">
+        <div class="sakura-petal petal-4"></div>
+        <div class="sakura-petal petal-5"></div>
+        <h1 class="display-3 fw-bold mb-4" id="hero-text">
           <span class="text-block">Discover Japanese Culture</span>
         </h1>
-        <p class="lead transition-subtitle">At NYP's most vibrant cultural club</p>
-        <div class="mt-4">
-          <a href="joinus.html" class="sjcc-btn mx-2">Join Now</a>
-          <a href="aboutme.html" class="sjcc-btn-outline mx-2">Learn More</a>
+        <p class="lead transition-subtitle">Join our vibrant community at NYP</p>
+        <div class="mt-4 hero-buttons">
+          <a href="aboutme.html" class="sjcc-btn mx-2">Learn About Us</a>
+          <a href="events.html" class="sjcc-btn-outline mx-2">View Events</a>
+          <a href="joinus.html" class="sjcc-btn mx-2">Join Us</a>
         </div>
       </div>
     </div>
   </header>
 
-  <!-- Featured Section -->
+  <!-- Featured Video -->
   <section class="py-5">
     <div class="container">
-      <h2 class="text-center fw-bold mb-5">Welcome to SJCC</h2>
       <div class="row align-items-center">
         <div class="col-lg-6 mb-4 mb-lg-0">
           <div class="ratio ratio-16x9">
-            <iframe src="https://youtu.be/l26Sc1vO1ho?si=lqaAZ6FcjBwfTFgU" allowfullscreen></iframe>
+            <iframe 
+              src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+              title="SJCC Cultural Showcase" 
+              allowfullscreen
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
+            </iframe>
           </div>
         </div>
         <div class="col-lg-6">
-          <p class="lead">Since 2010, we've brought authentic Japanese cultural experiences to NYP students through:</p>
-          <ul class="feature-list">
-            <li><i class="bi bi-check-circle-fill text-purple"></i> Hands-on workshops</li>
-            <li><i class="bi bi-check-circle-fill text-purple"></i> Cultural performances</li>
-            <li><i class="bi bi-check-circle-fill text-purple"></i> Community events</li>
-            <li><i class="bi bi-check-circle-fill text-purple"></i> Language exchange</li>
-          </ul>
-          <a href="aboutme.html" class="sjcc-btn mt-3">Our Story</a>
+          <h2 class="fw-bold mb-4">Experience Japanese Culture</h2>
+          <p class="lead">Watch our latest cultural showcase event featuring traditional and contemporary performances.</p>
+          <a href="events.html" class="sjcc-btn mt-3">More Events</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Photo Gallery -->
+  <!-- Gallery Highlights -->
   <section class="py-5 bg-light">
     <div class="container">
       <h2 class="text-center fw-bold mb-5">Gallery Highlights</h2>
       <div class="row g-3" id="gallery-highlights">
-        <!-- Gallery items loaded by JS -->
+        <!-- Will be populated by JavaScript -->
       </div>
       <div class="text-center mt-4">
-        <a href="gallery.html" class="sjcc-btn-outline">View Full Gallery</a>
+        <a href="events.html" class="sjcc-btn">View All Events</a>
       </div>
     </div>
   </section>
@@ -90,35 +92,41 @@
   <!-- Quick Links -->
   <section class="py-5">
     <div class="container">
-      <h2 class="text-center fw-bold mb-5">Get Involved</h2>
+      <h2 class="text-center fw-bold mb-5">Explore SJCC</h2>
       <div class="row g-4">
         <div class="col-md-4">
-          <div class="card quick-link-card h-100">
-            <div class="card-body text-center p-4">
-              <i class="bi bi-calendar-event fs-1 text-purple mb-3"></i>
-              <h5>Upcoming Events</h5>
-              <p>See what's happening this month</p>
-              <a href="events.html" class="sjcc-btn-outline">View Calendar</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card quick-link-card h-100">
-            <div class="card-body text-center p-4">
-              <i class="bi bi-people-fill fs-1 text-purple mb-3"></i>
-              <h5>Our Divisions</h5>
-              <p>Explore 6 cultural activities</p>
-              <a href="aboutme.html#divisions" class="sjcc-btn-outline">Learn More</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card quick-link-card h-100">
-            <div class="card-body text-center p-4">
-              <i class="bi bi-chat-square-text fs-1 text-purple mb-3"></i>
+          <div class="card quick-link-card text-center h-100">
+            <div class="card-body">
+              <div class="icon-circle mb-3">
+                <i class="bi bi-people-fill fs-2"></i>
+              </div>
               <h5>Join Our Community</h5>
-              <p>Become part of SJCC</p>
-              <a href="joinus.html" class="sjcc-btn-outline">Sign Up</a>
+              <p>Connect with 500+ members who share your passion for Japanese culture</p>
+              <a href="joinus.html" class="sjcc-btn-outline">Join Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card quick-link-card text-center h-100">
+            <div class="card-body">
+              <div class="icon-circle mb-3">
+                <i class="bi bi-calendar-event fs-2"></i>
+              </div>
+              <h5>Upcoming Events</h5>
+              <p>Don't miss out on our exciting workshops, performances, and cultural activities</p>
+              <a href="events.html" class="sjcc-btn-outline">View Events</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card quick-link-card text-center h-100">
+            <div class="card-body">
+              <div class="icon-circle mb-3">
+                <i class="bi bi-mortarboard-fill fs-2"></i>
+              </div>
+              <h5>Our Divisions</h5>
+              <p>Explore our 6 divisions: Origami, Manga/Anime, JMD, Cosplay, Film & Language</p>
+              <a href="aboutme.html" class="sjcc-btn-outline">Learn More</a>
             </div>
           </div>
         </div>
@@ -126,7 +134,7 @@
     </div>
   </section>
 
-  <!-- Footer (Consistent with Events page) -->
+  <!-- Footer -->
   <footer class="sjcc-footer py-4 text-white">
     <div class="container">
       <div class="row">
@@ -156,7 +164,7 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="home-text-transition.js"></script>
   <script src="home.js"></script>
+  <script src="hometextrans.js"></script>
 </body>
 </html>

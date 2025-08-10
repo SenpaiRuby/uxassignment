@@ -25,19 +25,21 @@
           <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="aboutme.html">About</a></li>
           <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
-          <li class="nav-item"><a class="nav-link active" href="join.html">Join Us</a></li>
+          <li class="nav-item"><a class="nav-link active" href="joinus.html">Join Us</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
   <!-- Hero Section with Sakura Petals -->
-  <header class="sjcc-hero text-white text-center py-5">
+  <header class="sjcc-hero join-hero text-white text-center py-5">
     <div class="container">
       <div class="hero-content">
         <div class="sakura-petal petal-1"></div>
         <div class="sakura-petal petal-2"></div>
         <div class="sakura-petal petal-3"></div>
+        <div class="sakura-petal petal-4"></div>
+        <div class="sakura-petal petal-5"></div>
         <h1 id="hero-text" class="display-3 fw-bold mb-4">
           <span class="text-block">Join SJCC</span>
         </h1>
@@ -88,17 +90,27 @@
                     <label for="division" class="form-label">Preferred Division(s)*</label>
                     <select class="form-select" id="division" multiple required>
                       <option value="origami">Origami</option>
-                      <option value="maid">Manga/Anime</option>
-                      <option value="jmd">Japanese Music & Dance</option>
+                      <option value="maid">Manga/Anime Illustration (MAID)</option>
+                      <option value="jmd">Japanese Music & Dance (JMD)</option>
                       <option value="cosplay">Cosplay</option>
                       <option value="film">Film</option>
-                      <option value="bjcl">Japanese Lessons</option>
+                      <option value="bjcl">Basic Japanese Culture & Language (BJCL)</option>
                     </select>
                     <small class="text-muted">Hold Ctrl/Cmd to select multiple</small>
                   </div>
                   <div class="col-12">
+                    <label for="experience" class="form-label">Previous Experience (Optional)</label>
+                    <select class="form-select" id="experience">
+                      <option value="">Select your experience level</option>
+                      <option value="beginner">Complete Beginner</option>
+                      <option value="some">Some Experience</option>
+                      <option value="intermediate">Intermediate</option>
+                      <option value="advanced">Advanced</option>
+                    </select>
+                  </div>
+                  <div class="col-12">
                     <label for="message" class="form-label">Why do you want to join SJCC?</label>
-                    <textarea class="form-control" id="message" rows="3"></textarea>
+                    <textarea class="form-control" id="message" rows="3" placeholder="Tell us about your interest in Japanese culture..."></textarea>
                   </div>
                   <div class="col-12">
                     <div class="form-check">
@@ -108,11 +120,42 @@
                       </label>
                     </div>
                   </div>
+                  <div class="col-12">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="newsletter">
+                      <label class="form-check-label" for="newsletter">
+                        Subscribe to our newsletter for updates on events and activities
+                      </label>
+                    </div>
+                  </div>
                   <div class="col-12 mt-4">
                     <button type="submit" class="sjcc-btn w-100">Submit Application</button>
                   </div>
                 </div>
               </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Form Response Section (Hidden initially) -->
+  <section class="py-5" id="responseSection" style="display: none;">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="card border-success">
+            <div class="card-header bg-success text-white">
+              <h4 class="mb-0">Application Submitted Successfully!</h4>
+            </div>
+            <div class="card-body">
+              <h5>Thank you for your application!</h5>
+              <div id="submittedData">
+                <!-- Submitted form data will be displayed here -->
+              </div>
+              <p class="mt-3">We will contact you within 3-5 business days regarding your application status.</p>
+              <a href="home.html" class="sjcc-btn">Return to Home</a>
             </div>
           </div>
         </div>
@@ -130,7 +173,7 @@
     </div>
   </section>
 
-  <!-- Footer (Consistent with Events page) -->
+  <!-- Footer -->
   <footer class="sjcc-footer py-4 text-white">
     <div class="container">
       <div class="row">
@@ -168,13 +211,42 @@
           <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <!-- Terms content same as Events page -->
           <h6 class="fw-bold">1. Eligibility</h6>
           <ul class="mb-3">
             <li>Open to all current NYP students with valid student ID</li>
             <li>Non-students may attend public events as guests</li>
+            <li>Members must maintain good academic standing</li>
           </ul>
-          <!-- Include all other terms sections -->
+          
+          <h6 class="fw-bold">2. Membership Responsibilities</h6>
+          <ul class="mb-3">
+            <li>Attend at least 70% of division meetings</li>
+            <li>Participate actively in club activities and events</li>
+            <li>Respect Japanese cultural practices and traditions</li>
+            <li>Maintain respectful behavior towards all members</li>
+          </ul>
+          
+          <h6 class="fw-bold">3. Code of Conduct</h6>
+          <ul class="mb-3">
+            <li>No discrimination based on race, religion, or background</li>
+            <li>Maintain appropriate behavior during all club activities</li>
+            <li>Follow NYP's student conduct policies</li>
+            <li>Respect club equipment and facilities</li>
+          </ul>
+          
+          <h6 class="fw-bold">4. Privacy Policy</h6>
+          <ul class="mb-3">
+            <li>Personal information will be kept confidential</li>
+            <li>Photos/videos may be taken for promotional purposes</li>
+            <li>Members may opt-out of promotional materials</li>
+          </ul>
+          
+          <h6 class="fw-bold">5. Termination</h6>
+          <ul class="mb-3">
+            <li>Membership may be revoked for misconduct</li>
+            <li>Members may withdraw at any time with written notice</li>
+            <li>Inactive members may have their membership suspended</li>
+          </ul>
         </div>
         <div class="modal-footer">
           <button type="button" class="sjcc-btn-outline" data-bs-dismiss="modal">I Understand</button>

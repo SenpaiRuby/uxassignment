@@ -13,12 +13,12 @@
 }
 
 .sjcc-navbar .navbar-brand {
-  color: white;
+  color: white !important;
   font-size: 1.5rem;
 }
 
 .sjcc-navbar .nav-link {
-  color: rgba(255,255,255,0.85);
+  color: rgba(255,255,255,0.85) !important;
   margin: 0 0.5rem;
   font-weight: 500;
   transition: all 0.3s;
@@ -26,14 +26,12 @@
 
 .sjcc-navbar .nav-link:hover,
 .sjcc-navbar .nav-link.active {
-  color: white;
+  color: white !important;
   transform: translateY(-2px);
 }
 
 /* Hero Section */
 .sjcc-hero {
-  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
-              url('hero-bg.jpg') center/cover;
   min-height: 60vh;
   display: flex;
   align-items: center;
@@ -41,6 +39,27 @@
   color: white;
   position: relative;
   overflow: hidden;
+}
+
+/* Hero Background Images */
+.home-hero {
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+              linear-gradient(135deg, var(--sjcc-purple), var(--sjcc-pink));
+}
+
+.about-hero {
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+              linear-gradient(45deg, var(--sjcc-pink), var(--sjcc-purple));
+}
+
+.events-hero {
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+              linear-gradient(225deg, var(--sjcc-purple), var(--sjcc-pink));
+}
+
+.join-hero {
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+              linear-gradient(315deg, var(--sjcc-pink), var(--sjcc-purple));
 }
 
 .hero-content {
@@ -85,45 +104,97 @@
 /* Sakura Petal Animation */
 .sakura-petal {
   position: absolute;
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ffffff"><path d="M12 2C13.1 2 14 2.9 14 4S13.1 6 12 6 10 5.1 10 4 10.9 2 12 2m3.5 5.1c-.7-.1-1.4.1-2 .4-1.2-1.1-2.9-1.3-4.3-.7-1.4.6-2.3 2-2.3 3.5 0 .5.1 1 .3 1.5-1.1.3-2 1-2.6 2-.6 1-.7 2.1-.4 3.2.3 1.1 1 2 2 2.6 1 .6 2.1.7 3.2.4 1.1-.3 2-1 2.6-2 .1-.2.2-.4.2-.6v.1c0 1.1.6 2.1 1.5 2.6.9.5 2 .6 3 .2 1.1-.4 1.9-1.3 2.2-2.4.3-1.1 0-2.2-.6-3.1.5-.4.9-1.1 1.1-2 .3-.9-.1-1.8-.6-2.4-1.3-.1-.1-.2-.2-.3-.3.1-.3.2-.6.2-1 0-1.1-.6-2.1-1.5-2.6z"/></svg>');
-  background-size: contain;
-  background-repeat: no-repeat;
-  opacity: 0.7;
-  width: 30px;
-  height: 30px;
-  animation: float 8s infinite linear;
+  width: 20px;
+  height: 20px;
+  opacity: 0.8;
   z-index: 1;
+}
+
+.sakura-petal::before {
+  content: '🌸';
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.8);
+  display: block;
 }
 
 .petal-1 {
   top: 10%;
   left: 10%;
+  animation: float 8s infinite linear;
   animation-delay: 0s;
-  transform: rotate(20deg);
 }
 
 .petal-2 {
   top: 30%;
   right: 15%;
+  animation: float 10s infinite linear;
   animation-delay: 2s;
-  transform: rotate(-15deg);
-  width: 25px;
-  height: 25px;
 }
 
 .petal-3 {
   bottom: 20%;
   left: 20%;
+  animation: float 12s infinite linear;
   animation-delay: 4s;
-  transform: rotate(10deg);
-  width: 20px;
-  height: 20px;
+}
+
+.petal-4 {
+  top: 50%;
+  left: 50%;
+  animation: float 9s infinite linear;
+  animation-delay: 1s;
+}
+
+.petal-5 {
+  bottom: 30%;
+  right: 30%;
+  animation: float 11s infinite linear;
+  animation-delay: 3s;
 }
 
 @keyframes float {
-  0% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-20px) rotate(180deg); }
-  100% { transform: translateY(0) rotate(360deg); }
+  0% { 
+    transform: translateY(0) rotate(0deg) translateX(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  90% {
+    opacity: 0.8;
+  }
+  100% { 
+    transform: translateY(20px) rotate(360deg) translateX(10px);
+    opacity: 0;
+  }
+}
+
+/* Text Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes zoomIn {
+  from { 
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to { 
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 /* Division Cards */
@@ -150,6 +221,7 @@
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  cursor: pointer;
 }
 
 .division-card:hover {
@@ -162,7 +234,7 @@
   width: 80px;
   height: 80px;
   margin: 0 auto;
-  background: white;
+  background: linear-gradient(135deg, var(--sjcc-lightpurple), var(--sjcc-lightpink));
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -237,7 +309,7 @@
 }
 
 .portrait-image {
-  object-fit: contain;
+  object-fit: contain !important;
   background-color: #f8f9fa;
 }
 
@@ -248,6 +320,13 @@
   border-radius: 8px;
   height: 200px;
   margin-bottom: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
 .gallery-item img {
@@ -260,6 +339,24 @@
 
 .gallery-item:hover img {
   transform: scale(1.1);
+}
+
+.gallery-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0,0,0,0.8));
+  color: white;
+  padding: 15px;
+  font-weight: 500;
+  text-align: center;
+  transform: translateY(100%);
+  transition: transform 0.3s;
+}
+
+.gallery-item:hover .gallery-caption {
+  transform: translateY(0);
 }
 
 .gallery-overlay {
@@ -276,6 +373,67 @@
 
 .gallery-item:hover .gallery-overlay {
   transform: translateY(0);
+}
+
+/* Member Cards */
+.member-card {
+  transition: all 0.3s ease;
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  cursor: pointer;
+}
+
+.member-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(158, 78, 227, 0.15);
+}
+
+.member-img-container {
+  position: relative;
+  height: 250px;
+  overflow: hidden;
+}
+
+.member-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  transition: transform 0.3s;
+}
+
+.member-card:hover .member-img {
+  transform: scale(1.05);
+}
+
+.member-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(158, 78, 227, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.member-card:hover .member-overlay {
+  opacity: 1;
+}
+
+.member-modal-img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}
+
+.text-purple {
+  color: var(--sjcc-purple) !important;
 }
 
 /* Calendar Styles */
@@ -317,6 +475,7 @@
   font-weight: 500;
   transition: all 0.3s;
   display: inline-block;
+  text-decoration: none;
 }
 
 .sjcc-btn:hover {
@@ -324,6 +483,7 @@
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(158, 78, 227, 0.3);
   color: white;
+  text-decoration: none;
 }
 
 .sjcc-btn-outline {
@@ -335,12 +495,14 @@
   font-weight: 500;
   transition: all 0.3s;
   display: inline-block;
+  text-decoration: none;
 }
 
 .sjcc-btn-outline:hover {
   background: var(--sjcc-purple);
   color: white;
   transform: translateY(-2px);
+  text-decoration: none;
 }
 
 .bg-purple {
@@ -395,99 +557,17 @@
   transform: translateY(-3px);
 }
 
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-  .sjcc-hero {
-    min-height: 50vh;
-    padding: 3rem 0;
-  }
-  
-  .sjcc-hero h1 {
-    font-size: 2.5rem;
-  }
-  
-  .event-card, .gallery-item {
-    margin-bottom: 1.5rem;
-  }
-  
-  .sakura-petal {
-    width: 20px;
-    height: 20px;
-  }
-
-  #event-calendar {
-    font-size: 0.9rem;
-  }
-<<<<<<< HEAD
+/* Quick Link Cards */
+.quick-link-card {
+  border: none;
+  border-radius: 10px;
+  transition: transform 0.3s;
+  height: 100%;
 }
 
-/* Join Page Specific Styles */
-.sjcc-hero {
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('join-bg.jpg') center/cover;
-  min-height: 400px;
-  display: flex;
-  align-items: center;
-}
-
-/* Sakura Petals Animation */
-.sakura-petal {
-  position: absolute;
-  background-image: url('sakura-petal.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 30px;
-  height: 30px;
-  opacity: 0.8;
-  animation: falling linear infinite;
-}
-
-.petal-1 {
-  left: 10%;
-  top: -30px;
-  animation-duration: 15s;
-  animation-delay: 0s;
-}
-
-.petal-2 {
-  left: 30%;
-  top: -30px;
-  animation-duration: 20s;
-  animation-delay: 5s;
-}
-
-.petal-3 {
-  left: 70%;
-  top: -30px;
-  animation-duration: 18s;
-  animation-delay: 2s;
-}
-
-@keyframes falling {
-  0% {
-    transform: translateY(0) rotate(0deg);
-    opacity: 0;
-  }
-  10% {
-    opacity: 0.8;
-  }
-  100% {
-    transform: translateY(100vh) rotate(360deg);
-    opacity: 0;
-  }
-}
-
-/* Form Styles */
-#joinForm .form-control,
-#joinForm .form-select {
-  padding: 10px 15px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-}
-
-#joinForm .form-control:focus,
-#joinForm .form-select:focus {
-  border-color: var(--sjcc-purple);
-  box-shadow: 0 0 0 0.25rem rgba(var(--sjcc-purple-rgb), 0.1);
+.quick-link-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
 /* Testimonial Cards */
@@ -504,72 +584,42 @@
   font-size: 1.2rem;
   margin-bottom: 15px;
 }
-/* Home Page Specific Styles */
-.sjcc-hero {
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('home-bg.jpg') center/cover;
-  min-height: 500px;
-  display: flex;
-  align-items: center;
-  position: relative;
-  overflow: hidden;
+
+/* Benefit Cards */
+.benefit-icon {
+  color: var(--sjcc-purple);
+  font-size: 3rem;
 }
 
-/* Sakura Petals Animation (Same as Join page) */
-.sakura-petal {
-  position: absolute;
-  background-image: url('sakura-petal.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 30px;
-  height: 30px;
-  opacity: 0.8;
-  animation: falling linear infinite;
-}
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .sjcc-hero {
+    min-height: 50vh;
+    padding: 3rem 0;
+  }
+  
+  .sjcc-hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .event-card, .gallery-item {
+    margin-bottom: 1.5rem;
+  }
+  
+  .sakura-petal {
+    width: 15px;
+    height: 15px;
+  }
 
-/* Gallery Styles */
-#gallery-highlights {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 15px;
-}
+  .sakura-petal::before {
+    font-size: 15px;
+  }
 
-.gallery-item {
-  position: relative;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  transition: transform 0.3s;
-}
+  #event-calendar {
+    font-size: 0.9rem;
+  }
 
-.gallery-item:hover {
-  transform: translateY(-5px);
-}
-
-.gallery-item img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
-
-/* Quick Link Cards */
-.quick-link-card {
-  border: none;
-  border-radius: 10px;
-  transition: transform 0.3s;
-  height: 100%;
-}
-
-.quick-link-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-}
-
-.feature-list {
-  list-style: none;
-  padding-left: 0;
-}
-
-.feature-list li {
-  margin-bottom: 10px;
-  font-size: 1.1rem;
+  .member-img-container {
+    height: 200px;
+  }
 }

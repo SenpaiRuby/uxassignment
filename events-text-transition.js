@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', function() {
   const heroSection = document.querySelector('.sjcc-hero');
   const heroText = document.getElementById('hero-text');
-  const textBlock = heroText.querySelector('.text-block');
+  const textBlock = heroText ? heroText.querySelector('.text-block') : null;
   const subtitle = document.querySelector('.transition-subtitle');
   
-  if (!heroText) return;
+  if (!heroText || !textBlock) return;
 
   const phrases = [
     {text: "SJCC Events", lang: "en"},
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   function updateText() {
     textBlock.textContent = phrases[currentIndex].text;
-    textBlock.lang = phrases[currentIndex].lang;
+    textBlock.setAttribute('lang', phrases[currentIndex].lang);
     
     const animations = ['fadeIn', 'slideUp', 'zoomIn'];
     const randomAnim = animations[Math.floor(Math.random() * animations.length)];
@@ -45,8 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Initial setup
   textBlock.textContent = phrases[0].text;
-  textBlock.lang = phrases[0].lang;
-  heroSection.classList.add('active');
-  
+  textBlock.setAttribute('lang', phrases[0].lang);
+  setTimeout(() => heroSection.classList.add('active'), 300);
   setTimeout(transitionText, 3000);
 });
