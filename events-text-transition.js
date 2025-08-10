@@ -9,8 +9,8 @@ document.addEventListener('DOMContentLoaded', function() {
   const phrases = [
     {text: "SJCC Events", lang: "en"},
     {text: "イベント", lang: "ja"},
-    {text: "SJCC 活動", lang: "ja"},
-    {text: "SJCC 行事", lang: "ja"}
+    {text: "Upcoming Activities", lang: "en"},
+    {text: "今後の予定", lang: "ja"}
   ];
   
   let currentIndex = 0;
